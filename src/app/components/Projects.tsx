@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import Projectx from "./Projectx";
+import projects from "./projectsObject.js";
+import Projectx from "./Projectx.tsx";
 import {
   motion,
   useScroll,
@@ -63,13 +64,13 @@ function Projects() {
 
   return (
     <div
-      className="flex-1 h-screen overflow-scroll hide-scrollbar"
+      className="flex-1 h-screen overflow-scroll hide-scrollbar pb-5"
       ref={scrollRef}
       onKeyDown={(e) => handleKeyDown(e)}
     >
-      {[1, 2, 3, 4, 5].map((image, id) => (
+      {projects.map((image, id) => (
         <div key={id} ref={ref}>
-          <Projectx />
+          <Projectx data={projects[id]} />
         </div>
       ))}
     </div>
