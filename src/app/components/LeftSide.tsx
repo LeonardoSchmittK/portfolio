@@ -9,10 +9,10 @@ import { motion, animate } from "framer-motion";
 
 const LeftSide = () => {
   return (
-    <div className="w-1/3 bg-gradient-to-r from-gray-900 to-slate-700 text-gray-50 h-screen flex items-center justify-center ">
+    <div className="md:w-1/3 w-full justify-center items-center  text-gray-50 p-5 md:p-0 md:h-screen    md:flex-col flex-row flex md:items-center md:justify-center ">
       <motion.section
-        animate={{ opacity: 1, height: 300 }}
-        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 300 }}
         transition={{
           duration: 1,
           type: "spring",
