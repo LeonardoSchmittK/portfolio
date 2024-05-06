@@ -34,18 +34,21 @@ const cardVariants: Variants = {
     height: "100px", // Initial height
     transition: { type: "spring", duration: 2 },
   },
+  appear: {
+    y: 500,
+  },
 };
 
-function Projectx({ data }) {
+function Projectx({ data, delay }) {
   const [toggleHeight, setToggleHeight] = useState(true);
   const ref = useRef(null);
   const [isGrayscale, setIsGrayscale] = useState(true);
   const title = data.title;
   const description = data.description;
   const imageSrc = data.image;
-  const stack = data.stack;
   const gitHub = data.gitHub;
   const stackIcons = data.icons;
+  const link = data.link;
 
   function handleClick() {
     setToggleHeight(!toggleHeight);
@@ -53,34 +56,30 @@ function Projectx({ data }) {
 
     if (toggleHeight) {
       const targetHeight = window.innerHeight;
-      let currentHeight = ref.current.clientHeight; // Get the current height of the element
+      let currentHeight = ref.current.clientHeight;
 
-      // Define an animation function
       function animate() {
-        currentHeight += 30; // Increment the height by 1 pixel
+        currentHeight += 30;
 
         if (currentHeight <= targetHeight) {
-          // If the current height is less than or equal to the target height
-          ref.current.style.height = currentHeight + "px"; // Update the element's height
-          requestAnimationFrame(animate); // Call animate recursively
+          ref.current.style.height = currentHeight + "px";
+          requestAnimationFrame(animate);
         }
       }
 
-      animate(); // Start the animation
+      animate();
     }
 
     if (!toggleHeight) {
       const targetHeight = window.innerHeight;
-      let currentHeight = Number.parseInt(ref.current.style.height); // Get the current height of the element
+      let currentHeight = Number.parseInt(ref.current.style.height);
 
-      // Define an animation function
       function animateBack() {
-        currentHeight -= 30; // Increment the height by 1 pixel
+        currentHeight -= 30;
 
         if (currentHeight >= 96) {
-          // If the current height is less than or equal to the target height
-          ref.current.style.height = currentHeight + "px"; // Update the element's height
-          requestAnimationFrame(animateBack); // Call animate recursively
+          ref.current.style.height = currentHeight + "px";
+          requestAnimationFrame(animateBack);
         }
       }
 
@@ -96,15 +95,20 @@ function Projectx({ data }) {
 
   return (
     <motion.div
-      className={`text-white h-24 flex items-top justify-start mt-5 p-4 focus:outline-none transition bg-cover overflow-hidden relative rounded-md ${
+      className={`text-white h-24 flex mt-5 p-4 focus:outline-none transition bg-cover overflow-hidden relative rounded-md ${
         toggleHeight ? "cursor-pointer" : "cursor-auto"
       }`}
       onMouseEnter={() => setIsGrayscale(false)}
       onMouseOut={() => setIsGrayscale(true)}
       ref={ref}
-      // initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: true, amount: 0.01 }}
+      initial="offscreen"
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.5,
+        delay: delay / 10,
+        type: "spring",
+        damping: 10,
+      }}
       variants={cardVariants}
       onClick={handleClick}
     >
@@ -115,12 +119,12 @@ function Projectx({ data }) {
         <h1 className={`${robotoWeighed.className} text-4xl`}>{title}</h1>
         <p className="opacity-40">{description}</p>
         <div className="flex flex-row gap-1 pt-4">
-          {data.link && (
+          {link && (
             <button
-              className={`px-3 py-1 h-8 mt-0.5 rounded-sm ${robotoWeighed.className} bg-gray-200 text-slate-800 hover:scale-105 transition`}
+              className={`px-3 py-1 h-8 mt-0.5 border-b-2 border-slate-500 rounded-sm ${robotoWeighed.className} bg-gray-200 text-slate-800 hover:scale-105 transition`}
             >
               {" "}
-              Try it out{" "}
+              <Link href={link}> Try it out </Link>
             </button>
           )}
 

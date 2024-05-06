@@ -70,7 +70,7 @@ function Projects() {
     >
       {projects.map((image, id) => (
         <div key={id} ref={ref}>
-          <Projectx data={projects[id]} />
+          <Projectx data={projects[id]} delay={id} />
         </div>
       ))}
     </div>
