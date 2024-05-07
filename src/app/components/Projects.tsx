@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import projects from "./projectsObject.js";
+import projects from "../utils/projectsObject.js";
 import Projectx from "./Projectx.tsx";
 
 function Projects() {

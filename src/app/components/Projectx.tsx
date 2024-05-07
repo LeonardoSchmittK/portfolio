@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { Key, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { robotoWeighed, robotoLight } from "./font";
+import { robotoWeighed, robotoLight } from "../utils/font";
 import { useState } from "react";
 import { IoLogoJavascript } from "react-icons/io5";
 import {
@@ -15,12 +15,6 @@ import {
 } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import { motion, Variants } from "framer-motion";
-
-interface Props {
-  emoji: string;
-  hueA: number;
-  hueB: number;
-}
 
 const cardVariants: Variants = {
   offscreen: {
@@ -41,7 +35,8 @@ const cardVariants: Variants = {
 
 function Projectx({ data, delay }) {
   const [toggleHeight, setToggleHeight] = useState(true);
-  const ref = useRef(null);
+  const ref = useRef<HTMLInputElement | null>(null);
+
   const [isGrayscale, setIsGrayscale] = useState(true);
   const title = data.title;
   const description = data.description;
@@ -50,44 +45,57 @@ function Projectx({ data, delay }) {
   const stackIcons = data.icons;
   const link = data.link;
 
-  function handleClick() {
-    setToggleHeight(!toggleHeight);
-    console.log(toggleHeight);
+  function animate() {
+    const targetHeight = window.innerHeight;
 
-    if (toggleHeight) {
-      const targetHeight = window.innerHeight;
+    if (ref.current) {
       let currentHeight = ref.current.clientHeight;
+      currentHeight += 30;
 
-      function animate() {
-        currentHeight += 30;
-
-        if (currentHeight <= targetHeight) {
-          ref.current.style.height = currentHeight + "px";
-          requestAnimationFrame(animate);
-        }
+      if (currentHeight <= targetHeight) {
+        ref.current.style.height = currentHeight + "px";
+        requestAnimationFrame(animate);
       }
-
-      animate();
-    }
-
-    if (!toggleHeight) {
-      const targetHeight = window.innerHeight;
-      let currentHeight = Number.parseInt(ref.current.style.height);
-
-      function animateBack() {
-        currentHeight -= 30;
-
-        if (currentHeight >= 96) {
-          ref.current.style.height = currentHeight + "px";
-          requestAnimationFrame(animateBack);
-        }
-      }
-
-      animateBack(); // Start the animation
     }
   }
 
-  function handleClickSection(e) {
+  function handleClick() {
+    if (ref.current) {
+      setToggleHeight(!toggleHeight);
+      console.log(toggleHeight);
+
+      if (toggleHeight) {
+        const targetHeight = window.innerHeight;
+        let currentHeight = ref.current.clientHeight;
+
+        animate();
+      }
+
+      if (!toggleHeight) {
+        const targetHeight = window.innerHeight;
+        let currentHeight = Number.parseInt(ref.current.style.height);
+
+        animateBack(); // Start the animation
+      }
+    }
+  }
+
+  function animateBack() {
+    if (ref.current) {
+      const targetHeight = window.innerHeight;
+
+      let currentHeight = ref.current.clientHeight;
+
+      currentHeight -= 30;
+
+      if (currentHeight >= 96) {
+        ref.current.style.height = currentHeight + "px";
+        requestAnimationFrame(animateBack);
+      }
+    }
+  }
+
+  function handleClickSection(e: MouseEvent) {
     e.preventDefault();
     e.stopPropagation();
     return false;
@@ -139,7 +147,7 @@ function Projectx({ data, delay }) {
         </div>
         <div className="flex-1 flex  flex-col justify-end align-middle ">
           <div className="flex flex-row gap-4">
-            {stackIcons.map((icon, key) => {
+            {stackIcons.map((icon, key: Key) => {
               return <div key={key}>{icon}</div>;
             })}
           </div>

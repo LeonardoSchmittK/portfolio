@@ -5,6 +5,8 @@ import {
   RiTailwindCssFill,
   RiJavascriptFill,
 } from "react-icons/ri";
+import { randomUUID } from "crypto";
+import uuid from "uuid";
 
 const relativePathProjects = "/images/projects";
 const relativeLinkGithub = "https://github.com/LeonardoSchmittK";
@@ -18,8 +20,8 @@ const projects = [
     image: `${relativePathProjects}/termorever.png`,
     gitHub: `${relativeLinkGithub}/termo`,
     icons: [
-      <RiNextjsFill size={iconSize} />,
-      <RiTailwindCssFill size={iconSize} />,
+      <RiNextjsFill size={iconSize} key={uuid()} />,
+      <RiTailwindCssFill size={iconSize} key={uuid()} />,
     ],
     link: "https://termorever.vercel.app/",
   },
@@ -30,9 +32,9 @@ const projects = [
     image: `${relativePathProjects}/twentyOnePilots.png`,
     gitHub: `${relativeLinkGithub}/twenty-one-pilots`,
     icons: [
-      <RiJavascriptFill size={iconSize} />,
-      <FaCss3Alt size={iconSize} />,
-      <FaHtml5 size={iconSize} />,
+      <RiJavascriptFill size={iconSize} key={uuid()} />,
+      <FaCss3Alt size={iconSize} key={uuid()} />,
+      <FaHtml5 size={iconSize} key={uuid()} />,
     ],
     link: "https://twenty-one-pilots-6upy.vercel.app/",
   },
@@ -41,11 +43,11 @@ const projects = [
     description: "A well-designed shopping list :)",
     stack: ["javascript", "css", "html"],
     image: `${relativePathProjects}/shoppingList.png`,
-    gitHub: `${relativeLinkGithub}/shopping-list-futuro-dev `,
+    gitHub: `${relativeLinkGithub}/shopping-list-futuro-dev`,
     icons: [
-      <RiJavascriptFill size={iconSize} />,
-      <FaCss3Alt size={iconSize} />,
-      <FaHtml5 size={iconSize} />,
+      <RiJavascriptFill size={iconSize} key={uuid()} />,
+      <FaCss3Alt size={iconSize} key={uuid()} />,
+      <FaHtml5 size={iconSize} key={uuid()} />,
     ],
   },
   {
@@ -55,9 +57,9 @@ const projects = [
     image: `${relativePathProjects}/pomodoroTimer.png`,
     gitHub: `${relativeLinkGithub}/pomodoroTimer`,
     icons: [
-      <RiJavascriptFill size={iconSize} />,
-      <FaCss3Alt size={iconSize} />,
-      <FaHtml5 size={iconSize} />,
+      <RiJavascriptFill size={iconSize} key={uuid()} />,
+      <FaCss3Alt size={iconSize} key={uuid()} />,
+      <FaHtml5 size={iconSize} key={uuid()} />,
     ],
   },
   {
@@ -68,9 +70,9 @@ const projects = [
     image: `${relativePathProjects}/movieResearcher.png`,
     gitHub: `${relativeLinkGithub}/movieResearcher`,
     icons: [
-      <RiJavascriptFill size={iconSize} />,
-      <FaCss3Alt size={iconSize} />,
-      <FaHtml5 size={iconSize} />,
+      <RiJavascriptFill size={iconSize} key={uuid()} />,
+      <FaCss3Alt size={iconSize} key={uuid()} />,
+      <FaHtml5 size={iconSize} key={uuid()} />,
     ],
   },
   {
@@ -81,8 +83,8 @@ const projects = [
     image: `${relativePathProjects}/enemDoDia.png`,
     gitHub: `${relativeLinkGithub}/enemDoDia-front`,
     icons: [
-      <RiNextjsFill size={iconSize} />,
-      <RiTailwindCssFill size={iconSize} />,
+      <RiNextjsFill size={iconSize} key={uuid()} />,
+      <RiTailwindCssFill size={iconSize} key={uuid()} />,
     ],
     link: "https://enem-do-dia.onrender.com/",
   },
@@ -93,9 +95,9 @@ const projects = [
     image: `${relativePathProjects}/dvdAnimation.png`,
     gitHub: `${relativeLinkGithub}/enemDoDia-front`,
     icons: [
-      <RiJavascriptFill size={iconSize} />,
-      <FaCss3Alt size={iconSize} />,
-      <FaHtml5 size={iconSize} />,
+      <RiJavascriptFill size={iconSize} key={uuid()} />,
+      <FaCss3Alt size={iconSize} key={uuid()} />,
+      <FaHtml5 size={iconSize} key={uuid()} />,
     ],
     link: "https://leonardoschmittk.github.io/dvd/",
   },
@@ -105,7 +107,7 @@ const projects = [
     stack: ["java"],
     image: `${relativePathProjects}/cadastroAlunos.jpg`,
     gitHub: `${relativeLinkGithub}/CadastroAlunos`,
-    icons: [<FaJava size={iconSize} />],
+    icons: [<FaJava size={iconSize} key={uuid()} />],
   },
 ];
 

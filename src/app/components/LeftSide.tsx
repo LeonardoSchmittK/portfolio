@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithubSquare, FaJava, FaReact } from "react-icons/fa";
 import { RiJavascriptFill } from "react-icons/ri";
 import { SiSpringboot } from "react-icons/si";
 import Link from "next/link";
-import { robotoWeighed, robotoLight } from "./font";
+import { robotoWeighed, robotoLight } from "../utils/font";
 import { motion, animate } from "framer-motion";
 
 const LeftSide = () => {
