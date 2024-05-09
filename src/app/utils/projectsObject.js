@@ -5,8 +5,7 @@ import {
   RiTailwindCssFill,
   RiJavascriptFill,
 } from "react-icons/ri";
-import { randomUUID } from "crypto";
-import uuid from "uuid";
+const { v4: uuidv4 } = require("uuid");
 
 const relativePathProjects = "/images/projects";
 const relativeLinkGithub = "https://github.com/LeonardoSchmittK";
@@ -20,8 +19,8 @@ const projects = [
     image: `${relativePathProjects}/termorever.png`,
     gitHub: `${relativeLinkGithub}/termo`,
     icons: [
-      <RiNextjsFill size={iconSize} key={uuid()} />,
-      <RiTailwindCssFill size={iconSize} key={uuid()} />,
+      <RiNextjsFill size={iconSize} key={uuidv4()} />,
+      <RiTailwindCssFill size={iconSize} key={uuidv4()} />,
     ],
     link: "https://termorever.vercel.app/",
   },
@@ -32,9 +31,9 @@ const projects = [
     image: `${relativePathProjects}/twentyOnePilots.png`,
     gitHub: `${relativeLinkGithub}/twenty-one-pilots`,
     icons: [
-      <RiJavascriptFill size={iconSize} key={uuid()} />,
-      <FaCss3Alt size={iconSize} key={uuid()} />,
-      <FaHtml5 size={iconSize} key={uuid()} />,
+      <RiJavascriptFill size={iconSize} key={uuidv4()} />,
+      <FaCss3Alt size={iconSize} key={uuidv4()} />,
+      <FaHtml5 size={iconSize} key={uuidv4()} />,
     ],
     link: "https://twenty-one-pilots-6upy.vercel.app/",
   },
@@ -45,9 +44,9 @@ const projects = [
     image: `${relativePathProjects}/shoppingList.png`,
     gitHub: `${relativeLinkGithub}/shopping-list-futuro-dev`,
     icons: [
-      <RiJavascriptFill size={iconSize} key={uuid()} />,
-      <FaCss3Alt size={iconSize} key={uuid()} />,
-      <FaHtml5 size={iconSize} key={uuid()} />,
+      <RiJavascriptFill size={iconSize} key={uuidv4()} />,
+      <FaCss3Alt size={iconSize} key={uuidv4()} />,
+      <FaHtml5 size={iconSize} key={uuidv4()} />,
     ],
   },
   {
@@ -57,9 +56,9 @@ const projects = [
     image: `${relativePathProjects}/pomodoroTimer.png`,
     gitHub: `${relativeLinkGithub}/pomodoroTimer`,
     icons: [
-      <RiJavascriptFill size={iconSize} key={uuid()} />,
-      <FaCss3Alt size={iconSize} key={uuid()} />,
-      <FaHtml5 size={iconSize} key={uuid()} />,
+      <RiJavascriptFill size={iconSize} key={uuidv4()} />,
+      <FaCss3Alt size={iconSize} key={uuidv4()} />,
+      <FaHtml5 size={iconSize} key={uuidv4()} />,
     ],
   },
   {
@@ -70,9 +69,9 @@ const projects = [
     image: `${relativePathProjects}/movieResearcher.png`,
     gitHub: `${relativeLinkGithub}/movieResearcher`,
     icons: [
-      <RiJavascriptFill size={iconSize} key={uuid()} />,
-      <FaCss3Alt size={iconSize} key={uuid()} />,
-      <FaHtml5 size={iconSize} key={uuid()} />,
+      <RiJavascriptFill size={iconSize} key={uuidv4()} />,
+      <FaCss3Alt size={iconSize} key={uuidv4()} />,
+      <FaHtml5 size={iconSize} key={uuidv4()} />,
     ],
   },
   {
@@ -83,8 +82,8 @@ const projects = [
     image: `${relativePathProjects}/enemDoDia.png`,
     gitHub: `${relativeLinkGithub}/enemDoDia-front`,
     icons: [
-      <RiNextjsFill size={iconSize} key={uuid()} />,
-      <RiTailwindCssFill size={iconSize} key={uuid()} />,
+      <RiNextjsFill size={iconSize} key={uuidv4()} />,
+      <RiTailwindCssFill size={iconSize} key={uuidv4()} />,
     ],
     link: "https://enem-do-dia.onrender.com/",
   },
@@ -95,9 +94,9 @@ const projects = [
     image: `${relativePathProjects}/dvdAnimation.png`,
     gitHub: `${relativeLinkGithub}/enemDoDia-front`,
     icons: [
-      <RiJavascriptFill size={iconSize} key={uuid()} />,
-      <FaCss3Alt size={iconSize} key={uuid()} />,
-      <FaHtml5 size={iconSize} key={uuid()} />,
+      <RiJavascriptFill size={iconSize} key={uuidv4()} />,
+      <FaCss3Alt size={iconSize} key={uuidv4()} />,
+      <FaHtml5 size={iconSize} key={uuidv4()} />,
     ],
     link: "https://leonardoschmittk.github.io/dvd/",
   },
@@ -107,7 +106,7 @@ const projects = [
     stack: ["java"],
     image: `${relativePathProjects}/cadastroAlunos.jpg`,
     gitHub: `${relativeLinkGithub}/CadastroAlunos`,
-    icons: [<FaJava size={iconSize} key={uuid()} />],
+    icons: [<FaJava size={iconSize} key={uuidv4()} />],
   },
 ];
 
