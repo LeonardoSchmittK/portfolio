@@ -62,14 +62,14 @@ const projects = [
   {
     title: "pomodoroTimer",
     description: "A web app for setting timers in the style of pomodoro",
-    stack: ["javascript", "css", "html"],
+    stack: ["javascript", "sass", "html"],
     image: `${relativePathProjects}/pomodoroTimer.png`,
     gitHub: {
       pathname: `${relativeLinkGithub}/pomodoroTimer`,
     },
     icons: [
       <RiJavascriptFill size={iconSize} key={uuidv4()} />,
-      <FaCss3Alt size={iconSize} key={uuidv4()} />,
+      <FaSass size={iconSize} key={uuidv4()} />,
       <FaHtml5 size={iconSize} key={uuidv4()} />,
     ],
   },
