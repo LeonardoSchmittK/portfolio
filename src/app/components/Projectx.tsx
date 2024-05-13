@@ -41,7 +41,7 @@ type dataType = {
   image: string;
   gitHub: UrlObject;
   icons: ReactNode[];
-  link: UrlObject;
+  link?: UrlObject;
 };
 
 function Projectx({ data, delay }: { data: dataType; delay: number }) {
