@@ -5,6 +5,7 @@ import {
   RiTailwindCssFill,
   RiJavascriptFill,
 } from "react-icons/ri";
+import { v4 as uuidv4 } from "uuid";
 
 const relativePathProjects = "/images/projects";
 const relativeLinkGithub = "https://github.com/LeonardoSchmittK";
@@ -16,36 +17,46 @@ const projects = [
     description: "Imagine a wordle, but you play forever...",
     stack: ["nextjs", "tailwindcss"],
     image: `${relativePathProjects}/termorever.png`,
-    gitHub: `${relativeLinkGithub}/termo`,
+    gitHub: {
+      pathname: `${relativeLinkGithub}/termo`,
+    },
     icons: [
-      <RiNextjsFill size={iconSize} />,
-      <RiTailwindCssFill size={iconSize} />,
+      <RiNextjsFill size={iconSize} key={uuidv4()} />,
+      <RiTailwindCssFill size={iconSize} key={uuidv4()} />,
     ],
-    link: "https://termorever.vercel.app/",
+    link: {
+      pathname: "https://termorever.vercel.app/",
+    },
   },
   {
     title: "Twenty One Pilots",
     description: "A website for Twenty One Pilots fans",
     stack: ["javascript", "css", "html"],
     image: `${relativePathProjects}/twentyOnePilots.png`,
-    gitHub: `${relativeLinkGithub}/twenty-one-pilots`,
+    gitHub: {
+      pathname: `${relativeLinkGithub}/twenty-one-pilots`,
+    },
     icons: [
-      <RiJavascriptFill size={iconSize} />,
-      <FaCss3Alt size={iconSize} />,
-      <FaHtml5 size={iconSize} />,
+      <RiJavascriptFill size={iconSize} key={uuidv4()} />,
+      <FaCss3Alt size={iconSize} key={uuidv4()} />,
+      <FaHtml5 size={iconSize} key={uuidv4()} />,
     ],
-    link: "https://twenty-one-pilots-6upy.vercel.app/",
+    link: {
+      pathname: "https://twenty-one-pilots-6upy.vercel.app/",
+    },
   },
   {
     title: "Shopping List",
     description: "A well-designed shopping list :)",
     stack: ["javascript", "css", "html"],
     image: `${relativePathProjects}/shoppingList.png`,
-    gitHub: `${relativeLinkGithub}/shopping-list-futuro-dev `,
+    gitHub: {
+      pathname: `${relativeLinkGithub}/shopping-list-futuro-dev `,
+    },
     icons: [
-      <RiJavascriptFill size={iconSize} />,
-      <FaCss3Alt size={iconSize} />,
-      <FaHtml5 size={iconSize} />,
+      <RiJavascriptFill size={iconSize} key={uuidv4()} />,
+      <FaCss3Alt size={iconSize} key={uuidv4()} />,
+      <FaHtml5 size={iconSize} key={uuidv4()} />,
     ],
   },
   {
@@ -53,11 +64,13 @@ const projects = [
     description: "A web app for setting timers in the style of pomodoro",
     stack: ["javascript", "css", "html"],
     image: `${relativePathProjects}/pomodoroTimer.png`,
-    gitHub: `${relativeLinkGithub}/pomodoroTimer`,
+    gitHub: {
+      pathname: `${relativeLinkGithub}/pomodoroTimer`,
+    },
     icons: [
-      <RiJavascriptFill size={iconSize} />,
-      <FaCss3Alt size={iconSize} />,
-      <FaHtml5 size={iconSize} />,
+      <RiJavascriptFill size={iconSize} key={uuidv4()} />,
+      <FaCss3Alt size={iconSize} key={uuidv4()} />,
+      <FaHtml5 size={iconSize} key={uuidv4()} />,
     ],
   },
   {
@@ -66,11 +79,13 @@ const projects = [
       "A web app for search info and list your favorite movies and tv-shows",
     stack: ["javascript", "css", "html"],
     image: `${relativePathProjects}/movieResearcher.png`,
-    gitHub: `${relativeLinkGithub}/movieResearcher`,
+    gitHub: {
+      pathname: `${relativeLinkGithub}/movieResearcher`,
+    },
     icons: [
-      <RiJavascriptFill size={iconSize} />,
-      <FaCss3Alt size={iconSize} />,
-      <FaHtml5 size={iconSize} />,
+      <RiJavascriptFill size={iconSize} key={uuidv4()} />,
+      <FaCss3Alt size={iconSize} key={uuidv4()} />,
+      <FaHtml5 size={iconSize} key={uuidv4()} />,
     ],
   },
   {
@@ -79,33 +94,43 @@ const projects = [
       "An random Enem question per day - so you can test your knowledge for the test and track your progress",
     stack: ["nextjs", "tailwindcss"],
     image: `${relativePathProjects}/enemDoDia.png`,
-    gitHub: `${relativeLinkGithub}/enemDoDia-front`,
     icons: [
-      <RiNextjsFill size={iconSize} />,
-      <RiTailwindCssFill size={iconSize} />,
+      <RiNextjsFill size={iconSize} key={uuidv4()} />,
+      <RiTailwindCssFill size={iconSize} key={uuidv4()} />,
     ],
-    link: "https://enem-do-dia.onrender.com/",
+    gitHub: {
+      pathname: `${relativeLinkGithub}/enemDoDia-front`,
+    },
+    link: {
+      pathname: "https://enem-do-dia.onrender.com/",
+    },
   },
   {
     title: "Dvd animation",
     description: "Why not? I just thought if I could do it on my own. I did :)",
     stack: ["javascript", "css", "html"],
     image: `${relativePathProjects}/dvdAnimation.png`,
-    gitHub: `${relativeLinkGithub}/enemDoDia-front`,
     icons: [
-      <RiJavascriptFill size={iconSize} />,
-      <FaCss3Alt size={iconSize} />,
-      <FaHtml5 size={iconSize} />,
+      <RiJavascriptFill size={iconSize} key={uuidv4()} />,
+      <FaCss3Alt size={iconSize} key={uuidv4()} />,
+      <FaHtml5 size={iconSize} key={uuidv4()} />,
     ],
-    link: "https://leonardoschmittk.github.io/dvd/",
+    gitHub: {
+      pathname: `${relativeLinkGithub}/enemDoDia-front`,
+    },
+    link: {
+      pathname: "https://leonardoschmittk.github.io/dvd/",
+    },
   },
   {
     title: "Classroom management",
     description: "A CRUD for manage a classroom",
     stack: ["java"],
     image: `${relativePathProjects}/cadastroAlunos.jpg`,
-    gitHub: `${relativeLinkGithub}/CadastroAlunos`,
-    icons: [<FaJava size={iconSize} />],
+    gitHub: {
+      pathname: `${relativeLinkGithub}/CadastroAlunos`,
+    },
+    icons: [<FaJava size={iconSize} key={uuidv4()} />],
   },
 ];
 
