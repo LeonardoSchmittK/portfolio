@@ -46,6 +46,23 @@ const projects = [
     },
   },
   {
+    title: "Enem do dia",
+    description:
+      "An random Enem question per day - so you can test your knowledge for the test and track your progress",
+    stack: ["nextjs", "tailwindcss"],
+    image: `${relativePathProjects}/enemDoDia.png`,
+    icons: [
+      <RiNextjsFill size={iconSize} key={uuidv4()} />,
+      <RiTailwindCssFill size={iconSize} key={uuidv4()} />,
+    ],
+    gitHub: {
+      pathname: `${relativeLinkGithub}/enemDoDia-front`,
+    },
+    link: {
+      pathname: "https://enem-do-dia.onrender.com/",
+    },
+  },
+  {
     title: "Shopping List",
     description: "A well-designed shopping list :)",
     stack: ["javascript", "css", "html"],
@@ -88,23 +105,7 @@ const projects = [
       <FaHtml5 size={iconSize} key={uuidv4()} />,
     ],
   },
-  {
-    title: "Enem do dia",
-    description:
-      "An random Enem question per day - so you can test your knowledge for the test and track your progress",
-    stack: ["nextjs", "tailwindcss"],
-    image: `${relativePathProjects}/enemDoDia.png`,
-    icons: [
-      <RiNextjsFill size={iconSize} key={uuidv4()} />,
-      <RiTailwindCssFill size={iconSize} key={uuidv4()} />,
-    ],
-    gitHub: {
-      pathname: `${relativeLinkGithub}/enemDoDia-front`,
-    },
-    link: {
-      pathname: "https://enem-do-dia.onrender.com/",
-    },
-  },
+  
   {
     title: "Dvd animation",
     description: "Why not? I just thought if I could do it on my own. I did :)",

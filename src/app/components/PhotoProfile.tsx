@@ -3,9 +3,9 @@ import Image from "next/image";
 
 function PhotoProfile() {
   return (
-    <div className="relative m-auto w-24 h-24 md:w-48 md:h-48 flex items-center justify-center py-2">
+    <div className="relative m-auto w-24 h-24 md:w-48 md:h-48 flex items-center justify-center py-2 mb-4">
       <Image
-        src="/images/pictureLeoNoBackground.png"
+        src="/images/leoPictureNoBg.png"
         alt="My Image"
         layout="fill"
         objectFit="cover"
