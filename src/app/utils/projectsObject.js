@@ -30,7 +30,7 @@ const projects = [
   },
   {
     title: "Twenty One Pilots",
-    description: "A website for Twenty One Pilots fans",
+    description: "A website for Twenty One Pilots fans. Made the whole design thinking as well.",
     stack: ["javascript", "css", "html"],
     image: `${relativePathProjects}/twentyOnePilots.png`,
     gitHub: {
@@ -48,7 +48,7 @@ const projects = [
   {
     title: "Enem do dia",
     description:
-      "An random Enem question per day - so you can test your knowledge for the test and track your progress",
+      "A random Enem question per day - so you can test your knowledge for the test and track your progress",
     stack: ["nextjs", "tailwindcss"],
     image: `${relativePathProjects}/enemDoDia.png`,
     icons: [
