@@ -135,9 +135,18 @@ function Projectx({ data, delay }: { data: dataType; delay: number }) {
         className=" p-2 flex flex-col rounded-sm "
         onClick={(e: React.MouseEvent) => handleClickSection(e)}
       >
-        <h1 className={`${robotoWeighed.className} text-4xl`}>{title}</h1>
-        <p className="opacity-40">{description}</p>
-        <div className="flex flex-row gap-1 pt-4">
+        <h1
+              onMouseEnter={() => setIsGrayscale(false)}
+              onMouseOut={() => setIsGrayscale(true)}
+        className={`${robotoWeighed.className} text-4xl`}>{title}</h1>
+        <p 
+              onMouseEnter={() => setIsGrayscale(false)}
+              onMouseOut={() => setIsGrayscale(true)}
+        className="opacity-40">{description}</p>
+        <div
+              onMouseEnter={() => setIsGrayscale(false)}
+              onMouseOut={() => setIsGrayscale(true)}
+        className="flex flex-row gap-1 pt-4">
           {link && (
             <button
               className={`px-3 py-1 h-8 mt-0.5 border-b-2 border-slate-500 rounded-sm ${robotoWeighed.className} bg-gray-200 text-slate-800 hover:scale-105 transition`}
