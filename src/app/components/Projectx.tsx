@@ -138,14 +138,17 @@ function Projectx({ data, delay }: { data: dataType; delay: number }) {
         <h1
               onMouseEnter={() => setIsGrayscale(false)}
               onMouseOut={() => setIsGrayscale(true)}
+              onClick={handleClick}
         className={`${robotoWeighed.className} text-4xl`}>{title}</h1>
         <p 
               onMouseEnter={() => setIsGrayscale(false)}
               onMouseOut={() => setIsGrayscale(true)}
+              onClick={handleClick}
         className="opacity-40">{description}</p>
         <div
               onMouseEnter={() => setIsGrayscale(false)}
               onMouseOut={() => setIsGrayscale(true)}
+              onClick={handleClick}
         className="flex flex-row gap-1 pt-4">
           {link && (
             <button
