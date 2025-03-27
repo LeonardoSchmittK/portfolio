@@ -1,5 +1,6 @@
 import { IoLogoJavascript } from "react-icons/io5";
-import { FaJava, FaReact, FaCss3Alt, FaHtml5, FaSass } from "react-icons/fa";
+import { FaJava, FaReact, FaCss3Alt, FaHtml5, FaSass,FaAws } from "react-icons/fa";
+import { SiDjango } from "react-icons/si";
 import {
   RiNextjsFill,
   RiTailwindCssFill,
@@ -12,6 +13,22 @@ const relativeLinkGithub = "https://github.com/LeonardoSchmittK";
 const iconSize = 50;
 
 const projects = [
+  {
+    title: "Sprinter",
+    description: "A Sprint app just like Jira with AWS and Django...",
+    stack: ["django","aws"],
+    image: `${relativePathProjects}/sprinter.png`,
+    gitHub: {
+      pathname: `${relativeLinkGithub}/sprinter__app`,
+    },
+    icons: [
+      <SiDjango size={iconSize} key={uuidv4()} />,
+      <FaAws size={iconSize} key={uuidv4()} />
+    ],
+    link: {
+      pathname: "https://sprinterapp-production.up.railway.app",
+    },
+  },
   {
     title: "Termorever",
     description: "Imagine a wordle, but you play forever...",
