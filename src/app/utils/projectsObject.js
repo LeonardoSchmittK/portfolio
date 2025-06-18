@@ -24,7 +24,7 @@ const projects = [
     icons: [
       <FaReact size={iconSize} key={uuidv4()} />,
       <FaAws size={iconSize} key={uuidv4()} />,
-      <DiMongodb size={iconSize} />
+      <DiMongodb size={iconSize} key={uuidv4()}/>
     ],
     link: {
       pathname: "https://master.d3luxg79ga6mfb.amplifyapp.com/Home",
