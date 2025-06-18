@@ -7,12 +7,29 @@ import {
   RiJavascriptFill,
 } from "react-icons/ri";
 import { v4 as uuidv4 } from "uuid";
-
+import { DiMongodb } from "react-icons/di";
 const relativePathProjects = "/images/projects";
 const relativeLinkGithub = "https://github.com/LeonardoSchmittK";
 const iconSize = 50;
 
 const projects = [
+  {
+    title: "Facelog",
+    description: "A webapp that users faceapi.js for rolls.",
+    stack: ["React","Aws","Chakra.ui","Node","mongo"],
+    image: `${relativePathProjects}/facelog.png`,
+    gitHub: {
+      pathname: `${relativeLinkGithub}/front_faceapp`,
+    },
+    icons: [
+      <FaReact size={iconSize} key={uuidv4()} />,
+      <FaAws size={iconSize} key={uuidv4()} />,
+      <DiMongodb size={iconSize} />
+    ],
+    link: {
+      pathname: "https://master.d3luxg79ga6mfb.amplifyapp.com/Home",
+    },
+  },
   {
     title: "Sprinter",
     description: "A Sprint app just like Jira with AWS and Django...",
